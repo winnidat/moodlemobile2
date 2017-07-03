@@ -27,7 +27,8 @@ angular.module('mm.core.login')
 
     $scope.siteurl = $stateParams.siteurl;
     $scope.credentials = {
-        username: $stateParams.username
+        username: 'test',
+        password: 'erser'
     };
     $scope.siteChecked = false;
 
@@ -35,9 +36,72 @@ angular.module('mm.core.login')
         siteConfig = $stateParams.siteconfig,
         eventThrown = false,
         siteId;
-
+    autoLogon(siteConfig);
     treatSiteConfig(siteConfig);
 
+
+    function autoLogon(siteCred) {
+
+            $mmApp.closeKeyboard();
+
+            // Get input data.
+            var siteurl = $scope.siteurl,
+                username = $scope.credentials.username,
+                password = $scope.credentials.password;
+
+            if (!$scope.siteChecked) {
+                // Site wasn't checked (it failed), let's check again.
+                return checkSite(siteurl).then(function() {
+                    if (!$scope.isBrowserSSO) {
+                        // Site doesn't use browser SSO, throw app's login again.
+                        return $scope.login();
+                    }
+                });
+            } else if ($scope.isBrowserSSO) {
+                // A previous check determined that browser SSO is needed. Let's check again, maybe site was updated.
+                return checkSite(siteurl);
+            }
+
+            if (!username) {
+                $mmUtil.showErrorModal('mm.login.usernamerequired', true);
+                return;
+            }
+            if (!password) {
+                $mmUtil.showErrorModal('mm.login.passwordrequired', true);
+                return;
+            }
+
+            var modal = $mmUtil.showModalLoading();
+
+            // Start the authentication process.
+
+            return $mmSitesManager.getUserToken(siteurl, username, password).then(function(data) {
+                return $mmSitesManager.newSite(data.siteurl, data.token, data.privatetoken).then(function(id) {
+                    delete $scope.credentials; // Delete username and password from the scope.
+                    $ionicHistory.nextViewOptions({disableBack: true});
+                    siteId = id;
+
+                    if (urlToOpen) {
+                        // There's a content link to open.
+                        return $mmContentLinksDelegate.getActionsFor(urlToOpen, undefined, username).then(function(actions) {
+                            action = $mmContentLinksHelper.getFirstValidAction(actions);
+                            if (action && action.sites.length) {
+                                // Action should only have 1 site because we're filtering by username.
+                                action.action(action.sites[0]);
+                            } else {
+                                return $mmLoginHelper.goToSiteInitialPage();
+                            }
+                        });
+                    } else {
+                        return $mmLoginHelper.goToSiteInitialPage();
+                    }
+                });
+            }).catch(function(error) {
+                $mmLoginHelper.treatUserTokenError(siteurl, error);
+            }).finally(function() {
+                modal.dismiss();
+            });
+        };
     // Function to check if a site uses local_mobile, requires SSO login, etc.
     // This should be used only if a fixed URL is set, otherwise this check is already performed in mmLoginSiteCtrl.
     function checkSite(siteurl) {
@@ -109,6 +173,8 @@ angular.module('mm.core.login')
         $scope.siteChecked = true;
         $scope.pageLoaded = true;
     }
+   
+
 
     $scope.login = function() {
 
@@ -144,6 +210,7 @@ angular.module('mm.core.login')
         var modal = $mmUtil.showModalLoading();
 
         // Start the authentication process.
+
         return $mmSitesManager.getUserToken(siteurl, username, password).then(function(data) {
             return $mmSitesManager.newSite(data.siteurl, data.token, data.privatetoken).then(function(id) {
                 delete $scope.credentials; // Delete username and password from the scope.

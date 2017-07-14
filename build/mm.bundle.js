@@ -59967,7 +59967,7 @@ angular.module('mm.core')
     //"demo_sites": {"student": {"url": "http://school.demo.moodle.net", "username": "student", "password": "moodle"}, "teacher": {"url": "http://school.demo.moodle.net", "username": "teacher", "password": "moodle"}, "cva": {"url": "http://mm.cvaconsulting.com/moodle", "username": "student", "password": "student"}},
     "gcmpn": "694767596569",
     "customurlscheme": "moodlemobile",
-    "siteurl": "school.demo.moodle.net",
+    "siteurl": "https://moodle.common-sense.at/alpha-maroc/",
     //"siteurl": "http://localhost:8080/moodle",
     //"siteurl":  {"url": "http://localhost:8080/moodle", "username": "user", "password": "123456"}}, 
     "skipssoconfirmation": "false",

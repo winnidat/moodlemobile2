@@ -6,27 +6,12 @@
         <ion-refresher pulling-text="{{ 'mm.core.pulltorefresh' | translate }}" ng-if="timeline.loaded || timelineCourses.loaded || courses.loaded" on-refresh="refreshMyOverview()">
         </ion-refresher>
         <div class="tabs tabs-striped tabs-free mm-tabs-color">
-            <a class="tab-item" ng-class="{'active': tabShown == 'timeline'}" ng-click="switchTab('timeline')">{{ 'mma.myoverview.timeline' | translate }}</a>
+         
             <a class="tab-item" ng-class="{'active': tabShown == 'courses'}" ng-click="switchTab('courses')">{{ 'mm.courses.courses' | translate }}</a>
         </div>
         <div class="padding">
-            <div class="item-select mm-full-width-centered mm-timelinesort" ng-show="tabShown == 'timeline' && (timeline.loaded || timelineCourses.loaded)">
-                <select ng-model="timeline.sort" ng-change="switchSort()">
-                    <option value="sortbydates">{{ 'mma.myoverview.sortbydates' | translate }}</option>
-                    <option value="sortbycourses">{{ 'mma.myoverview.sortbycourses' | translate }}</option>
-                </select>
-            </div>
-            <mm-loading hide-until="timeline.loaded" ng-show="tabShown == 'timeline' && timeline.sort == 'sortbydates'" class="mm-loading-center">
-                <mma-my-overview-event-list events="timeline.events" show-course="true" can-load-more="timeline.canLoadMore" load-more="loadMoreTimeline()"></mma-my-overview-event-list>
-            </mm-loading>
-            <mm-loading hide-until="timelineCourses.loaded" ng-show="tabShown == 'timeline' && timeline.sort == 'sortbycourses'" class="block mm-loading-center">
-                <div class="block mm-course-grid">
-                    <mm-course-list-progress ng-repeat="course in timelineCourses.courses" course="course" round-progress="true" show-summary="true">
-                        <mma-my-overview-event-list events="course.events" can-load-more="course.canLoadMore" load-more="loadMoreCourse(course)"></mma-my-overview-event-list>
-                    </mm-course-list-progress>
-                </div>
-                <mm-empty-box ng-if="timelineCourses.courses.length == 0" image="addons/myoverview/img/courses.svg" message="{{ 'mma.myoverview.nocourses' | translate }}"></mm-empty-box>
-            </mm-loading>
+            
+         
             <mm-loading hide-until="courses.loaded" ng-show="tabShown == 'courses'" class="mm-loading-center">
                 <div class="row row-no-padding padding-bottom" ng-show="!showFilter">
                     <div class="col-10 text-left">

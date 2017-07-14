@@ -59955,7 +59955,7 @@ angular.module('mm.addons.mod_wiki')
 angular.module('mm.core')
 
 .constant('mmCoreConfigConstants', {
-    "app_id" : "com.alpha_maroc.alpha",
+    "app_id" : "com.alpha.moodlemobile",
     "appname": "Alpha Maroc",
     "versioncode" : "2018",
     "versionname" : "3.3.0",

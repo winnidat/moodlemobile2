@@ -59956,7 +59956,7 @@ angular.module('mm.core')
 
 .constant('mmCoreConfigConstants', {
     "app_id" : "com.alpha_maroc.alpha",
-    "appname": "Alpha Maroc",
+    "appname": "Alpha Maroc Mobile",
     "versioncode" : "2018",
     "versionname" : "3.3.0",
     "cache_expiration_time" : 300000,

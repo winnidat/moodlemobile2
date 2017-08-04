@@ -10,12 +10,9 @@
             <a class="tab-item" ng-class="{'active': tabShown == 'courses'}" ng-click="switchTab('courses')">{{ 'mm.courses.courses' | translate }}</a>
         </div>
         <div class="padding">
-            
-         
-            <mm-loading hide-until="courses.loaded" ng-show="tabShown == 'courses'" class="mm-loading-center">
-                <div class="row row-no-padding padding-bottom" ng-show="!showFilter">
-                   
-                       
+                <mm-loading hide-until="courses.loaded" ng-show="tabShown == 'courses'" class="mm-loading-center">
+                                
+              
 
                 <div ng-class="{'mm-course-grid': showGrid}">
                     <mm-course-list-progress ng-repeat="course in courses[courses.selected] | filter:{fullname: courses.filter}" course="course" round-progress="showGrid" show-summary="showGrid"></mm-course-list-progress>

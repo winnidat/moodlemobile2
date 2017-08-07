@@ -12460,6 +12460,11 @@ angular.module('mm.core.course')
     $scope.downloadSectionsIcon = getDownloadSectionIcon();
     $scope.sectionHasContent = $mmCourseHelper.sectionHasContent;
     $scope.courseActions = [];
+    $state.go('site.mm_course-section', {
+                    sectionid: sectionId,
+                    cid: courseId,
+                    mid: moduleId
+                });
     function loadSections(refresh) {
         var promise;
         if (course) {

@@ -15,11 +15,6 @@
         </ion-refresher>
         <mm-loading hide-until="scormLoaded">
 	        <mm-course-mod-description watch="true" description="description" component="{{component}}" component-id="{{componentId}}"></mm-course-mod-description>
-         
-                <!-- Warning that you don't have any more attempts -->
-	            <!-- Open SCORM in app form -->
-                <form class="card" ng-if="!errorMessage && (!scorm.lastattemptlock || scorm.attemptsLeft > 0)" ng-submit="open($event)">
-               		<!-- Open mode (Preview or Normal) -->
                		<!-- Create new attempt -->
                     <ion-checkbox ng-if="!scorm.forcenewattempt && scorm.numAttempts > 0 && !scorm.incomplete && scorm.attemptsLeft > 0" class="item-text-wrap item-checkbox-right" ng-model="scormOptions.newAttempt">
                         <p class="item-heading">{{ 'mma.mod_scorm.newattempt' | translate }}</p>
@@ -29,8 +24,9 @@
 	                    <button class="button button-block button-positive">{{ 'mma.mod_scorm.enter' | translate }}</button>
                 	</div>
                 	<div class="item text-center" ng-if="downloading">
-	     
-	             
+	                	<ion-spinner></ion-spinner>
+	                	<p ng-if="progressMessage">{{ progressMessage | translate }}</p>
+	                	<p ng-if="percentage <= 100">{{ 'mm.core.percentagenumber' | translate:{$a: percentage} }}</p>
 	                </div>
                 </form>
 	        </div>

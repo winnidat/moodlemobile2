@@ -15,6 +15,21 @@
         </ion-refresher>
         <mm-loading hide-until="scormLoaded">
 	        <mm-course-mod-description watch="true" description="description" component="{{component}}" component-id="{{componentId}}"></mm-course-mod-description>
+
+	            <!-- Open SCORM in app form -->
+                <form class="card" ng-if="!errorMessage && (!scorm.lastattemptlock || scorm.attemptsLeft > 0)" ng-submit="open($event)">
+               		<!-- Open mode (Preview or Normal) -->
+                	<div class="item" ng-if="!scorm.hidebrowse">
+                		<p class="item-heading">{{ 'mma.mod_scorm.mode' | translate }}</p>
+                		<p class="mma-mod-scorm-checkbox-padding">
+                			<input type="radio" name="mode" ng-model="scormOptions.mode" value="{{modebrowse}}" aria-labelledby="mma-mod_scorm-browse">
+                			<span id="mma-mod_scorm-browse">{{ 'mma.mod_scorm.browse' | translate }}</span>
+                		</p>
+                		<p class="mma-mod-scorm-checkbox-padding">
+                			<input type="radio" name="mode" ng-model="scormOptions.mode" value="{{modenormal}}" aria-labelledby="mma-mod_scorm-normal">
+                			<span id="mma-mod_scorm-normal">{{ 'mma.mod_scorm.normal' | translate }}</span>
+                		</p>
+                	</div>
                		<!-- Create new attempt -->
                     <ion-checkbox ng-if="!scorm.forcenewattempt && scorm.numAttempts > 0 && !scorm.incomplete && scorm.attemptsLeft > 0" class="item-text-wrap item-checkbox-right" ng-model="scormOptions.newAttempt">
                         <p class="item-heading">{{ 'mma.mod_scorm.newattempt' | translate }}</p>

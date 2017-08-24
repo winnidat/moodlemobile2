@@ -10566,21 +10566,21 @@ a.button {
 
 .bar-content {
   border-color: transparent;
-  background-color: #f98012;
+  background-color: #9ac2c9;
   background-image: linear-gradient(0deg, transparent, transparent 50%, transparent 50%);
   color: #ffffff; }
   .bar-content .title {
     color: #ffffff; }
   .bar-content .button {
     border-color: transparent;
-    background-color: #f98012;
+    background-color: #9ac2c9;
     color: #ffffff; }
     .bar-content .button:hover {
       color: #ffffff;
       text-decoration: none; }
     .bar-content .button.active, .bar-content .button.activated {
       border-color: transparent;
-      background-color: #f98012; }
+      background-color: #9ac2c9; }
     .bar-content .button.button-clear {
       border-color: transparent;
       background: none;
@@ -10743,7 +10743,7 @@ p.item-text-wrap {
 
 /* Show buttons as tabs */
 .mm-tabs-color .tab-item {
-  color: rgba(249, 128, 18, 0.6);
+  color: rgba(154, 194, 201, 0.6);
   opacity: 1; }
   .mm-tabs-color .tab-item .badge, .mm-tabs-color .tab-item .mma-messages-date span, .mma-messages-date .mm-tabs-color .tab-item span, .mm-tabs-color .tab-item
   .mma-messages-unreadfrom span,
@@ -10751,8 +10751,8 @@ p.item-text-wrap {
     opacity: 0.6; }
   .mm-tabs-color .tab-item.tab-item-active, .mm-tabs-color .tab-item.active, .mm-tabs-color .tab-item.activated {
     margin-top: -2px;
-    color: #f98012;
-    border: 0 solid #f98012;
+    color: #9ac2c9;
+    border: 0 solid #9ac2c9;
     border-top-width: 2px; }
     .mm-tabs-color .tab-item.tab-item-active .badge, .mm-tabs-color .tab-item.tab-item-active .mma-messages-date span, .mma-messages-date .mm-tabs-color .tab-item.tab-item-active span, .mm-tabs-color .tab-item.tab-item-active
     .mma-messages-unreadfrom span,
@@ -10765,15 +10765,15 @@ p.item-text-wrap {
       opacity: 1; }
 
 .mm-tabs-color .tab-item {
-  color: rgba(249, 128, 18, 0.6);
+  color: rgba(154, 194, 201, 0.6);
   opacity: 1; }
   .mm-tabs-color .tab-item .badge, .mm-tabs-color .tab-item .mma-messages-date span, .mma-messages-date .mm-tabs-color .tab-item span, .mm-tabs-color .tab-item
   .mma-messages-unreadfrom span,
   .mma-messages-unreadfrom .mm-tabs-color .tab-item span, .mm-tabs-color .tab-item .mma-chat-notice span, .mma-chat-notice .mm-tabs-color .tab-item span {
     opacity: 0.6; }
   .mm-tabs-color .tab-item.tab-item-active, .mm-tabs-color .tab-item.active, .mm-tabs-color .tab-item.activated {
-    color: #f98012;
-    border: 0 solid #f98012; }
+    color: #9ac2c9;
+    border: 0 solid #9ac2c9; }
     .mm-tabs-color .tab-item.tab-item-active .badge, .mm-tabs-color .tab-item.tab-item-active .mma-messages-date span, .mma-messages-date .mm-tabs-color .tab-item.tab-item-active span, .mm-tabs-color .tab-item.tab-item-active
     .mma-messages-unreadfrom span,
     .mma-messages-unreadfrom .mm-tabs-color .tab-item.tab-item-active span, .mm-tabs-color .tab-item.tab-item-active .mma-chat-notice span, .mma-chat-notice .mm-tabs-color .tab-item.tab-item-active span, .mm-tabs-color .tab-item.active .badge, .mm-tabs-color .tab-item.active .mma-messages-date span, .mma-messages-date .mm-tabs-color .tab-item.active span, .mm-tabs-color .tab-item.active
@@ -10803,7 +10803,7 @@ p.item-text-wrap {
 
 .mm-menu-selected:not(.button), .mm-split-item-selected:not(.button), .item.mma-mod-lesson-selected:not(.button), .mm-grades-table .mma-mod-lesson-selected.itemcenter:not(.button) {
   background-color: #f5f5f5;
-  border-left: 5px solid #fa9b44;
+  border-left: 5px solid #bbd6db;
   padding-left: 12px; }
   .mm-menu-selected:not(.button).item-avatar, .mm-menu-selected.item-media:not(.button), .item-media.mm-split-item-selected:not(.button), .item-media.item.mma-mod-lesson-selected:not(.button), .mm-grades-table .item-media.mma-mod-lesson-selected.itemcenter:not(.button), .mm-menu-selected.item-avatar-center:not(.button), .item-avatar-center.mm-split-item-selected:not(.button), .item-avatar-center.item.mma-mod-lesson-selected:not(.button), .mm-grades-table .item-avatar-center.mma-mod-lesson-selected.itemcenter:not(.button), .mm-split-item-selected:not(.button).item-avatar, .mm-split-item-selected.item-progress:not(.button), .mm-menu-selected.item-progress:not(.button), .item-progress.item.mma-mod-lesson-selected:not(.button), .mm-grades-table .item-progress.mma-mod-lesson-selected.itemcenter:not(.button), .item.mma-mod-lesson-selected:not(.button).item-avatar, .mm-grades-table .mma-mod-lesson-selected.itemcenter:not(.button).item-avatar, .mm-menu-selected:not(.button).item-avatar-left, .mm-split-item-selected:not(.button).item-avatar-left, .item.mma-mod-lesson-selected:not(.button).item-avatar-left, .mm-grades-table .mma-mod-lesson-selected.itemcenter:not(.button).item-avatar-left {
     padding-left: 68px; }
@@ -11988,7 +11988,7 @@ progress {
     border-radius: 2px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset; }
   progress[value]::-webkit-progress-value {
-    background-color: #fa9b44;
+    background-color: #bbd6db;
     border-radius: 2px; }
 
 mm-progress-bar {
@@ -12822,6 +12822,9 @@ mm-course-list-item div.item-icon-left.earlysubmission {
     background: #ffffff;
     border: 1px solid #dddddd; }
 
+#mm-settings-languagelabel {
+  color: #3a3a3a; }
+
 .mm-question-textarea {
   width: 100%;
   height: 250px;
@@ -12952,12 +12955,9 @@ li.mm-question-answer-incorrect,
 .mm-question-warning, p.mm-question-warning, .item .mm-question-warning, .mm-grades-table .itemcenter .mm-question-warning {
   color: #cb3d4d; }
 
-#mm-settings-languagelabel {
-  color: #3a3a3a; }
-
 .bar-side-menu {
   border-color: transparent;
-  background-color: #f98012;
+  background-color: #9ac2c9;
   background-image: linear-gradient(0deg, transparent, transparent 50%, transparent 50%);
   color: #ffffff;
   height: 80px !important; }
@@ -13366,19 +13366,6 @@ p.mma-mod-assign-warning {
   .mma-mod_chat-users-modal .button-bar .button {
     border: 0; }
 
-.mm-site_mod_choice .chart {
-  max-width: 400px;
-  margin: 0 auto; }
-
-@media (min-width: 767px) {
-  .mm-site_mod_choice .col {
-    border-left: 1px solid #dddddd; }
-    .mm-site_mod_choice .col.item, .mm-site_mod_choice .mm-grades-table .col.itemcenter, .mm-grades-table .mm-site_mod_choice .col.itemcenter, .mm-site_mod_choice .col .chart-item {
-      margin-top: 0;
-      border-top: 0; }
-    .mm-site_mod_choice .col:first-child {
-      border-left: 0; } }
-
 .mm-site_mod_feedback .mm-analysis ul {
   font-size: 14px; }
 
@@ -13396,6 +13383,19 @@ p.mma-mod-assign-warning {
 .mm-site_mod_feedback-form input, .mm-site_mod_feedback-form textarea {
   background: transparent; }
 
+.mm-site_mod_choice .chart {
+  max-width: 400px;
+  margin: 0 auto; }
+
+@media (min-width: 767px) {
+  .mm-site_mod_choice .col {
+    border-left: 1px solid #dddddd; }
+    .mm-site_mod_choice .col.item, .mm-site_mod_choice .mm-grades-table .col.itemcenter, .mm-grades-table .mm-site_mod_choice .col.itemcenter, .mm-site_mod_choice .col .chart-item {
+      margin-top: 0;
+      border-top: 0; }
+    .mm-site_mod_choice .col:first-child {
+      border-left: 0; } }
+
 .mma-forum-discussion-link {
   text-decoration: none; }
   .mma-forum-discussion-link.mm-split-item-selected,
@@ -13406,7 +13406,7 @@ p.mma-mod-assign-warning {
     .mma-forum-discussion-link.mm-split-item-selected article .item-heading,
     .mma-forum-discussion-link.mm-split-item-selected > .item article .item-heading, .mm-grades-table
     .mma-forum-discussion-link.mm-split-item-selected > .itemcenter article .item-heading {
-      border-top: 5px solid #f98012;
+      border-top: 5px solid #9ac2c9;
       margin-top: -1px; }
 
 .mma-forum-align-right {
@@ -13570,6 +13570,27 @@ p.mma-mod-quiz-warning {
 #mma-mod-quiz-toc .item, #mma-mod-quiz-toc .mm-grades-table .itemcenter, .mm-grades-table #mma-mod-quiz-toc .itemcenter {
   border-color: #9e9e9e; }
 
+.mm-site_mod_survey .row, .mm-site_mod_survey .input-label {
+  font-size: 14px; }
+
+.mm-site_mod_survey .mma-mod_survey-darkbg {
+  background-color: #f5f5f5; }
+
+.mm-site_mod_survey .mma-mod_survey-padding-top {
+  padding-top: 20px; }
+
+.mm-site_mod_survey textarea.mma-mod_survey-textarea {
+  height: 100px;
+  border: 1px solid #dddddd; }
+
+.mm-site_mod_survey select.mma-mod_survey-select {
+  background-color: transparent;
+  padding-left: 0px;
+  padding-right: 32px;
+  max-width: 100%; }
+  .mm-site_mod_survey select.mma-mod_survey-select .mma-mod_survey-defaultoption {
+    display: none; }
+
 .mma-scorm-level-0 {
   padding-left: 16px; }
 
@@ -13646,27 +13667,6 @@ ion-popover-view {
 .platform-ios ion-popover-view.mma-scorm-popover {
   padding-top: 10px;
   padding-bottom: 10px; }
-
-.mm-site_mod_survey .row, .mm-site_mod_survey .input-label {
-  font-size: 14px; }
-
-.mm-site_mod_survey .mma-mod_survey-darkbg {
-  background-color: #f5f5f5; }
-
-.mm-site_mod_survey .mma-mod_survey-padding-top {
-  padding-top: 20px; }
-
-.mm-site_mod_survey textarea.mma-mod_survey-textarea {
-  height: 100px;
-  border: 1px solid #dddddd; }
-
-.mm-site_mod_survey select.mma-mod_survey-select {
-  background-color: transparent;
-  padding-left: 0px;
-  padding-right: 32px;
-  max-width: 100%; }
-  .mm-site_mod_survey select.mma-mod_survey-select .mma-mod_survey-defaultoption {
-    display: none; }
 
 .mm-site_mod_wiki {
   background-color: white;
@@ -14019,15 +14019,6 @@ ion-popover-view {
   margin-bottom: 10px;
   background: #f5f5f5; }
 
-.mma-qtype-match-container .item-select select,
-.mma-qtype-match-container .item-select .mm-select-fix {
-  padding: 0 36px 0 0;
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column; }
-
 .mma-qtype-multianswer-container p {
   margin: 0 0 .5em; }
 
@@ -14060,3 +14051,12 @@ ion-popover-view {
 .mma-qtype-multianswer-container input[type="radio"], .mma-qtype-multianswer-container input[type="checkbox"] {
   margin-top: -4px;
   margin-right: 7px; }
+
+.mma-qtype-match-container .item-select select,
+.mma-qtype-match-container .item-select .mm-select-fix {
+  padding: 0 36px 0 0;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column; }

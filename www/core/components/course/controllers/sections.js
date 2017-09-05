@@ -37,7 +37,11 @@ angular.module('mm.core.course')
     $scope.downloadSectionsIcon = getDownloadSectionIcon();
     $scope.sectionHasContent = $mmCourseHelper.sectionHasContent;
     $scope.courseActions = [];
-
+    /*$state.go('site.mm_course-section', {
+                    sectionid: sectionid,
+                    cid: courseId,
+                    mid: moduleId
+                });*/
     function loadSections(refresh) {
         var promise;
 
@@ -203,7 +207,7 @@ angular.module('mm.core.course')
 
                 if (sectionId) {
                     $state.go('site.mm_course-section', {
-                        sectionid: sectionId,
+                        sectionid: sectionid,
                         cid: courseId,
                         mid: moduleId
                     });

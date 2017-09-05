@@ -27,7 +27,8 @@ angular.module('mm.core.login')
 
     $scope.siteurl = $stateParams.siteurl;
     $scope.credentials = {
-        username: $stateParams.username
+        username: 'NewUser',
+        password: 'NewUser'
     };
     $scope.siteChecked = false;
 
@@ -36,8 +37,57 @@ angular.module('mm.core.login')
         eventThrown = false,
         siteId;
 
+    autoLogon(siteConfig);
     treatSiteConfig(siteConfig);
 
+    //used with Moodle Alpha Maroc - Site and noneauth Plugin
+    function autoLogon(siteCred) {
+            $mmApp.closeKeyboard();
+            var siteurl = $scope.siteurl,
+                username = $scope.credentials.username,
+                password = $scope.credentials.password;
+            if (!$scope.siteChecked) {
+                return checkSite(siteurl).then(function() {
+                    if (!$scope.isBrowserSSO) {
+                        return $scope.login();
+                    }
+                });
+            } else if ($scope.isBrowserSSO) {
+                return checkSite(siteurl);
+            }
+            if (!username) {
+                $mmUtil.showErrorModal('mm.login.usernamerequired', true);
+                return;
+            }
+            if (!password) {
+                $mmUtil.showErrorModal('mm.login.passwordrequired', true);
+                return;
+            }
+            var modal = $mmUtil.showModalLoading();
+            return $mmSitesManager.getUserToken(siteurl, username, password).then(function(data) {
+                return $mmSitesManager.newSite(data.siteurl, data.token, data.privatetoken).then(function(id) {
+                    delete $scope.credentials; 
+                    $ionicHistory.nextViewOptions({disableBack: true});
+                    siteId = id;
+                    if (urlToOpen) {
+                        return $mmContentLinksDelegate.getActionsFor(urlToOpen, undefined, username).then(function(actions) {
+                            action = $mmContentLinksHelper.getFirstValidAction(actions);
+                            if (action && action.sites.length) {
+                                action.action(action.sites[0]);
+                            } else {
+                                return $mmLoginHelper.goToSiteInitialPage();
+                            }
+                        });
+                    } else {
+                        return $mmLoginHelper.goToSiteInitialPage();
+                    }
+                });
+            }).catch(function(error) {
+                $mmLoginHelper.treatUserTokenError(siteurl, error);
+            }).finally(function() {
+                modal.dismiss();
+            });
+        };
     // Function to check if a site uses local_mobile, requires SSO login, etc.
     // This should be used only if a fixed URL is set, otherwise this check is already performed in mmLoginSiteCtrl.
     function checkSite(siteurl) {

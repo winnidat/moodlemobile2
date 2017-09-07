@@ -18,45 +18,7 @@
             <div class="mm-info-card-icon" ng-if="scorm.warningmessage">
                 <i class="icon ion-information-circled padding"></i> {{ scorm.warningmessage }}
             </div>
-	        <div ng-if="allDataLoaded && !scorm.warningmessage">
-	        	<!-- Attempts status -->
-	        	<div class="card" ng-if="scorm.displayattemptstatus || Object.keys(scorm.offlineAttempts).length">
-	        		<div class="item item-divider">{{ 'mma.mod_scorm.attempts' | translate }}</div>
-		        	<div class="item" ng-if="scorm.displayattemptstatus && scorm.maxattempt >= 0">
-	                    <p class="item-heading">{{ 'mma.mod_scorm.noattemptsallowed' | translate }}</p>
-	                    <p ng-if="scorm.maxattempt == 0">{{ 'mm.core.unlimited' | translate }}</p>
-	                    <p ng-if="scorm.maxattempt > 0">{{ scorm.maxattempt }}</p>
-	                </div>
-		        	<div class="item" ng-if="scorm.displayattemptstatus && scorm.numAttempts >= 0">
-	                    <p class="item-heading">{{ 'mma.mod_scorm.noattemptsmade' | translate }}</p>
-	                    <p>{{ scorm.numAttempts }}</p>
-	                </div>
-	                <div class="item" ng-if="scorm.displayattemptstatus" ng-repeat="attempt in scorm.onlineAttempts track by $index">
-	                    <p class="item-heading">{{ 'mma.mod_scorm.gradeforattempt' | translate }} {{attempt.number}}</p>
-	                    <p ng-if="attempt.grade != -1">{{ attempt.grade }}</p>
-	                    <p ng-if="attempt.grade == -1">{{ 'mma.mod_scorm.cannotcalculategrade' | translate }}</p>
-	                </div>
-	                <div class="item item-text-wrap" ng-repeat="attempt in scorm.offlineAttempts track by $index">
-	                    <p class="item-heading">{{ 'mma.mod_scorm.gradeforattempt' | translate }} {{attempt.number}}</p>
-	                    <p ng-if="attempt.grade != -1">{{ attempt.grade }}</p>
-	                    <p ng-if="attempt.grade == -1">{{ 'mma.mod_scorm.cannotcalculategrade' | translate }}</p>
-	                    <p ng-if="scorm.maxattempt == 0 || attempt.number <= scorm.maxattempt">{{ 'mma.mod_scorm.offlineattemptnote' | translate }}</p>
-	                    <p ng-if="scorm.maxattempt != 0 && attempt.number > scorm.maxattempt">{{ 'mma.mod_scorm.offlineattemptovermax' | translate }}</p>
-	                </div>
-		        	<div class="item" ng-if="scorm.displayattemptstatus && scorm.grademethodReadable">
-	                    <p class="item-heading">{{ 'mma.mod_scorm.grademethod' | translate }}</p>
-	                    <p>{{ scorm.grademethodReadable }}</p>
-	                </div>
-		        	<div class="item" ng-if="scorm.displayattemptstatus && scorm.grade">
-	                    <p class="item-heading">{{ 'mma.mod_scorm.gradereported' | translate }}</p>
-	                    <p ng-if="scorm.grade != -1">{{ scorm.grade }}</p>
-	                    <p ng-if="scorm.grade == -1">{{ 'mma.mod_scorm.cannotcalculategrade' | translate }}</p>
-	                </div>
-	                <div class="item" ng-if="syncTime">
-	                	<p class="item-heading">{{ 'mm.core.lastsync' | translate }}</p>
-	                    <p>{{ syncTime }}</p>
-	                </div>
-	            </div>
+	     
                 <!-- Synchronize button -->
                 <div class="mm-warning-card-icon" ng-if="!errorMessage && hasOffline">
                     <i class="icon ion-alert-circled padding"></i> {{ 'mm.core.hasdatatosync' | translate:{$a: moduleName} }}

@@ -37,11 +37,8 @@ angular.module('mm.core.course')
     $scope.downloadSectionsIcon = getDownloadSectionIcon();
     $scope.sectionHasContent = $mmCourseHelper.sectionHasContent;
     $scope.courseActions = [];
-    /*$state.go('site.mm_course-section', {
-                    sectionid: sectionid,
-                    cid: courseId,
-                    mid: moduleId
-                });*/
+    $scope.loadSections();
+
     function loadSections(refresh) {
         var promise;
 
@@ -247,11 +244,17 @@ angular.module('mm.core.course')
         }).finally(function() {
             section.isCalculating = false;
         });
+        
     };
 
     loadSections().finally(function() {
         autoloadSection();
         $scope.sectionsLoaded = true;
+        $state.go('site.mm_course-section', {
+                    sectionid: -2,
+                    cid: courseId,
+                    mid: moduleId
+                    });
     });
 
     // Listen for section status changes.

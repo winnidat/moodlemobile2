@@ -129,7 +129,9 @@ $ionicons-font-path: "../lib/ionic/release/fonts" !default;
     color: $item-icon-accessory-color;
   }
 }
-
+.mm-image-viewer-icon {
+  display:none;
+}
 .button,
 .button.button-icon {
   .icon,

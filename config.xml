@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.moodle.moodlemobile" version="3.3.1">
-    <name>Alpha Maroc</name>
+    <name>الوكالة الوطنية لمحاربة الأمية</name>
     <description>
-        Literacy App
+        Alpha Maroc Literacy App
     </description>
-    <author href="http://www.edulabs.org" email="edulabs@info.org">
+    <author href="http://www.edulabs.org" email="info@edulabs.org">
         edulabs
     </author>
     <content src="index.html"/>

@@ -37,7 +37,11 @@ angular.module('mm.core.course')
     $scope.downloadSectionsIcon = getDownloadSectionIcon();
     $scope.sectionHasContent = $mmCourseHelper.sectionHasContent;
     $scope.courseActions = [];
-    $scope.loadSections();
+    $state.go('site.mm_course-section', {
+                        sectionid: -1,
+                        cid: courseId,
+                        mid: moduleId
+                    });
 
     function loadSections(refresh) {
         var promise;
@@ -250,11 +254,7 @@ angular.module('mm.core.course')
     loadSections().finally(function() {
         autoloadSection();
         $scope.sectionsLoaded = true;
-        $state.go('site.mm_course-section', {
-                    sectionid: -2,
-                    cid: courseId,
-                    mid: moduleId
-                    });
+        
     });
 
     // Listen for section status changes.

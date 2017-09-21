@@ -1,7 +1,7 @@
 {
-    "app_id" : "com.alpha_maroc.alpha",
-    "appname": "Alpha Maroc Mobile",
-    "desktopappname": "Moodle Desktop",
+    "app_id" : "org.edulabs.alpha",
+    "appname": "الوكالة الوطنية لمحاربة الأمية",
+    "desktopappname": "الوكالة الوطنية لمحاربة الأمية",
     "versioncode" : "2019",
     "versionname" : "3.3.1",
     "cache_expiration_time" : 300000,

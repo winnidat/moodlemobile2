@@ -3,7 +3,6 @@
     	<ion-refresher pulling-text="{{ 'mm.core.pulltorefresh' | translate }}" ng-if="scormLoaded" on-refresh="refreshScorm(false)">
         </ion-refresher>
         <mm-loading hide-until="scormLoaded">
-	       
             <div class="mm-info-card-icon" ng-if="scorm.warningmessage">
                 <i class="icon ion-information-circled padding"></i> {{ scorm.warningmessage }}
             </div>

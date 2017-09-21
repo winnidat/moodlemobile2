@@ -16,10 +16,9 @@
     </author>
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
-        <string>3.3.1</string>
+        <string>3.3.0</string>
     </gap:config-file>
 
-    <gap:platform name="ios" />
     <gap:platform name="android" />
 
     <access origin="*" />
@@ -111,8 +110,6 @@
         <splash src="resources/ios/splash/Default-Portrait~ipad.png" width="768" height="1024"/>
         <splash src="resources/ios/splash/Default@2x~iphone.png" width="640" height="960"/>
         <splash src="resources/ios/splash/Default~iphone.png" width="320" height="480"/>
-        <splash src="resources/ios/splash/Default-Landscape@~ipadpro.png" width="2732" height="2048"/>
-        <splash src="resources/ios/splash/Default-Portrait@~ipadpro.png" width="2048" height="2732"/>
     </platform>
 
     <gap:plugin name="cordova-plugin-camera" source="npm" />
@@ -146,7 +143,7 @@
     <gap:plugin name="ch.ti8m.documenthandler" spec="https://github.com/ti8m/DocumentHandler.git" source="git" />
 
     <gap:config-file platform="android" parent="/manifest">
-         <application android:debuggable="true" />
+         <application android:debuggable="false" />
     </gap:config-file>
 
     <!-- See MOBILE-892 -->

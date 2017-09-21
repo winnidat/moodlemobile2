@@ -2,17 +2,17 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
-        id        = "com.moodle.moodlemobile"
+        id        = "org.edulabs.alpha"
         versionCode = "20190"
         version   = "3.3.1">
-    <name>Moodle Mobile</name>
+     <name>الوكالة الوطنية لمحاربة الأمية</name>
 
     <description>
-        Moodle Mobile official app
+        Alpha Maroc Literacy App
     </description>
 
-    <author href="http://moodle.com" email="mobile@moodle.com">
-        Moodle Mobile team
+    <author href="http://www.edulabs.org" email="info@edulabs.org">
+        edulabs
     </author>
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">

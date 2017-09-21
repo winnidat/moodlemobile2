@@ -53,6 +53,7 @@ angular.module('mm.addons.mod_scorm')
     $scope.modenormal = $mmaModScorm.MODENORMAL;
     $scope.modebrowse = $mmaModScorm.MODEBROWSE;
 
+
     // Convenience function to get SCORM data.
     function fetchScormData(refresh, checkCompletion, showErrors) {
         $scope.isOnline = $mmApp.isOnline();
@@ -446,32 +447,24 @@ angular.module('mm.addons.mod_scorm')
         $mmText.expandText($translate.instant('mm.core.description'), $scope.description, false, mmaModScormComponent, module.id);
     };
 
+
+    //on back view go back one more
+
     // Update data when we come back from the player since it's probable that it has changed.
     // We want to skip the first $ionicView.enter event because it's when the view is created.
     var skip = true;
     $scope.$on('$ionicView.enter', function() {
+        
         if (skip) {
             skip = false;
             return;
         }
+        skip = true;
+        // Uncheck new attempt.
+        $scope.scormOptions.newAttempt = false;
+        $ionicHistory.goBack(-1);
+         
 
-        $scope.scormOptions.newAttempt = false; // Uncheck new attempt.
-
-        var forwardView = $ionicHistory.forwardView();
-        if (forwardView && forwardView.stateName === 'site.mod_scorm-player') {
-            $scope.scormLoaded = false;
-            $scope.refreshIcon = 'spinner';
-            $scope.syncIcon = 'spinner';
-            scrollView.scrollTop();
-            // Add a delay to make sure the player has started the last writing calls so we can detect conflicts.
-            $timeout(function() {
-                refreshData(false, true).finally(function() {
-                    $scope.scormLoaded = true;
-                    $scope.refreshIcon = 'ion-refresh';
-                    $scope.syncIcon = 'ion-loop';
-                });
-            }, 500);
-        }
     });
 
     // Refresh online status when changes.

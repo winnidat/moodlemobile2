@@ -326,6 +326,7 @@ angular.module('mm.addons.mod_scorm')
     // Empty src when leaving the state so unload event is triggered in the iframe.
     $scope.$on('$ionicView.beforeLeave', function() {
         $scope.src = '';
+        $ionicHistory.goBack(-2);
     });
 
     $scope.$on('$destroy', function() {

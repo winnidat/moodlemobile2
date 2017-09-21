@@ -399,14 +399,14 @@ angular.module('mm.addons.mod_scorm')
     // Open a SCORM. It will download the SCORM package if it's not downloaded or it has changed.
     // The scoId param indicates the SCO that needs to be loaded when the SCORM is opened. If not defined, load first SCO.
 
-    function openAut(scoId) {
+    function openAut(scoId,status) {
 
 
         if ($scope.downloading) {
             // Scope is being downloaded, abort.
             return;
         }
-
+        currentStatus = status;
         var isOutdated = currentStatus == mmCoreOutdated;
 
         if (isOutdated || currentStatus == mmCoreNotDownloaded) {

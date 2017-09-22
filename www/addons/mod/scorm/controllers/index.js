@@ -53,7 +53,6 @@ angular.module('mm.addons.mod_scorm')
     $scope.modenormal = $mmaModScorm.MODENORMAL;
     $scope.modebrowse = $mmaModScorm.MODEBROWSE;
 
-
     // Convenience function to get SCORM data.
     function fetchScormData(refresh, checkCompletion, showErrors) {
         $scope.isOnline = $mmApp.isOnline();
@@ -146,7 +145,6 @@ angular.module('mm.addons.mod_scorm')
             return showError(message);
         }).then(function() {
             $scope.allDataLoaded = true;
-
             // All data obtained, now fill the context menu.
             $mmCourseHelper.fillContextMenu($scope, module, courseid, refresh, mmaModScormComponent);
         });
@@ -398,15 +396,15 @@ angular.module('mm.addons.mod_scorm')
 
     // Open a SCORM. It will download the SCORM package if it's not downloaded or it has changed.
     // The scoId param indicates the SCO that needs to be loaded when the SCORM is opened. If not defined, load first SCO.
-
-    function openAut(scoId,status) {
-
+    $scope.open = function(e, scoId) {
+        e.preventDefault();
+        e.stopPropagation();
 
         if ($scope.downloading) {
             // Scope is being downloaded, abort.
             return;
         }
-        currentStatus = status;
+
         var isOutdated = currentStatus == mmCoreOutdated;
 
         if (isOutdated || currentStatus == mmCoreNotDownloaded) {
@@ -447,26 +445,23 @@ angular.module('mm.addons.mod_scorm')
         $mmText.expandText($translate.instant('mm.core.description'), $scope.description, false, mmaModScormComponent, module.id);
     };
 
-
-    //on back view go back one more
-
     // Update data when we come back from the player since it's probable that it has changed.
     // We want to skip the first $ionicView.enter event because it's when the view is created.
+    
     var skip = true;
-    $scope.$on('$ionicView.enter', function() {
-        
+    $scope.$on('$ionicView.enter', function() {    
         if (skip) {
             skip = false;
-            openAut();
+            $timeout(function() {
+            angular.element(document.querySelector("#startscorm1")).triggerHandler("submit");
+            }, 300);
             return;
         }
         skip = true;
         // Uncheck new attempt.
         $scope.scormOptions.newAttempt = false;
         $ionicHistory.goBack(-1);
-         
-
-    });
+   });
 
     // Refresh online status when changes.
     onlineObserver = $mmEvents.on(mmCoreEventOnlineStatusChanged, function(online) {

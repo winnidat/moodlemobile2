@@ -31,7 +31,7 @@
 	                	<div ng-repeat="sco in toc track by sco.id" class="mma-scorm-level-{{sco.level}}">
 	                		<p ng-if="sco.isvisible">
 	                			<img ng-src="{{sco.image.url}}" alt="{{sco.image.description}}" />
-	                			<a href="#" ng-if="sco.prereq && sco.launch" ng-click="open($event, sco.id)">{{ sco.title }}</a>
+	                			<a href="#" id="openevent" ng-if="sco.prereq && sco.launch" ng-click="open($event, sco.id)">{{ sco.title }}</a>
 	                			<span ng-if="!sco.prereq || !sco.launch">{{ sco.title }}</span>
 	                		</p>
 	                	</div>
@@ -47,7 +47,7 @@
                 	<p class="mma-mod-scorm-warning">{{ 'mma.mod_scorm.exceededmaxattempts' | translate }}</p>
                 </div>
 	            <!-- Open SCORM in app form -->
-                <form class="card" ng-if="!errorMessage && (!scorm.lastattemptlock || scorm.attemptsLeft > 0)" ng-submit="open($event)">
+                <form  id="startscorm1" class="card"  ng-if="!errorMessage && (!scorm.lastattemptlock || scorm.attemptsLeft > 0)" ng-submit="open($event)">
                		<!-- Open mode (Preview or Normal) -->
                 	<div class="item" ng-if="!scorm.hidebrowse">
                 		<p class="item-heading">{{ 'mma.mod_scorm.mode' | translate }}</p>
@@ -66,7 +66,7 @@
                     </ion-checkbox>
                 	<div class="item item-text-wrap" ng-if="!downloading">
                 		<p ng-if="statusMessage">{{ statusMessage | translate }}</p>
-	                    <button class="button button-block button-positive">{{ 'mma.mod_scorm.enter' | translate }}</button>
+	                    <button class="button button-block button-positive startscorm">{{ 'mma.mod_scorm.enter' | translate }}</button>
                 	</div>
                 	<div class="item text-center" ng-if="downloading">
 	                	<ion-spinner></ion-spinner>

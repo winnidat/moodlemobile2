@@ -31,7 +31,7 @@ angular.module('mm.core.course')
         course = $stateParams.course ? angular.copy($stateParams.course) : false;
     $scope.courseId = courseId;
     $scope.sectionToLoad = 2; // Load "General" section by default.
-    $scope.fullname = $ionicHistory.backView().stateName; //course.fullname || "";
+    $scope.fullname = course.fullname || "";
     $scope.downloadSectionsEnabled = $mmCourseHelper.isDownloadSectionsEnabled();
     $scope.downloadSectionsIcon = getDownloadSectionIcon();
     $scope.sectionHasContent = $mmCourseHelper.sectionHasContent;
@@ -56,28 +56,6 @@ angular.module('mm.core.course')
 
         }
     }); 
-
-    /*$scope.$on('$ionicView.enter', function() {
-        var backView = $ionicHistory.backView();
-        $ionicHistory.removeBackView();
-        if (backView.stateName === 'site.myoverview') {
-             $timeout(function() {
-                $state.go('site.mm_course-section', {
-                sectionid: -1,
-                cid: courseId,
-                mid: moduleId
-                });         
-            }, 100);
-
-        }
-        else {
-              $state.go('site.myoverview'); 
-            
-        }                     
-    });*/
-
-
-    
     
 
     function loadSections(refresh) {

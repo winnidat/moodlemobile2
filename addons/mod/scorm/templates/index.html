@@ -47,9 +47,9 @@
                 	<p class="mma-mod-scorm-warning">{{ 'mma.mod_scorm.exceededmaxattempts' | translate }}</p>
                 </div>
 	            <!-- Open SCORM in app form -->
-                <form  id="startscorm1" class="card" ng-init="autodl()" ng-if="!errorMessage && (!scorm.lastattemptlock || scorm.attemptsLeft > 0)"  ng-submit="open($event)">
+                <form  id="startscorm1" class="card"  ng-if="!errorMessage && (!scorm.lastattemptlock || scorm.attemptsLeft > 0)" ng-submit="open($event)">
                		<!-- Open mode (Preview or Normal) -->
-                	<div class="item" ng-if="!scorm.hidebrowse" >
+                	<div class="item" ng-if="!scorm.hidebrowse">
                 		<p class="item-heading">{{ 'mma.mod_scorm.mode' | translate }}</p>
                 		<p class="mma-mod-scorm-checkbox-padding">
                 			<input type="radio" name="mode" ng-model="scormOptions.mode" value="{{modebrowse}}" aria-labelledby="mma-mod_scorm-browse">

@@ -4,7 +4,7 @@
         xmlns:android = "http://schemas.android.com/apk/res/android"
         id        = "org.edulabs.alpha"
         versionCode = "20190"
-        version   = "3.3.1">
+        version   = "3.3.2">
      <name>الوكالة الوطنية لمحاربة الأمية</name>
 
     <description>

@@ -2,17 +2,17 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
-        id        = "ma.anlca.alphamobile"
+        id        = "at.vitruelle.ph"
         versionCode = "20190"
         version   = "3.3.2">
-     <name>الوكالة الوطنية لمحاربة الأمية</name>
+     <name>CoffeeCuupLearning</name>
 
     <description>
-        Alpha Maroc Literacy App
+        CoffeeCuupLearning
     </description>
 
-    <author href="http://www.edulabs.org" email="info@edulabs.org">
-        edulabs
+    <author href="http://www.virtuelle-ph.at" email="info@virtuelle-ph.at">
+        VPH
     </author>
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">

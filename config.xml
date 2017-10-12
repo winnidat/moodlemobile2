@@ -2,13 +2,13 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
-        id        = "ma.anlca.alphamobile"
+        id        = "org.edulabs.hirtenberger"
         versionCode = "20200"
         version   = "1.0">
-     <name>الوكالة الوطنية لمحاربة الأمية</name>
+     <name>Hirtenberger mobileLearning</name>
 
     <description>
-        Alpha Maroc Literacy App
+        Hirtenbergere eLearning Plattform
     </description>
 
     <author href="http://www.edulabs.org" email="info@edulabs.org">
@@ -16,7 +16,7 @@
     </author>
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
-        <string>3.3.0</string>
+        <string>1.0</string>
     </gap:config-file>
 
     <gap:platform name="android" />

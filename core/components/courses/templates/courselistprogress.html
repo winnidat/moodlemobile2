@@ -21,15 +21,12 @@
         <i ng-if="showActions && loaded" class="icon ion-android-more-vertical mm-animate-show-hide" ng-click="showCourseActions($event)"></i>
         <ion-spinner ng-if="!loaded" class="mm-animate-show-hide"></ion-spinner>
     </a>
-    <a ng-class="{'item-progress': roundProgress}" ui-sref="site.mm_course({courseid: course.id, course: course})" title="{{course.fullname}}">
     <div class="item item-text-wrap item-borderless" ng-show="course.summary" ng-if="showSummary">
-
-            <summary style="">
-                <mm-format-text watch="true">{{course.summary}}</mm-format-text>
+        <p>
+            <summary>
+                <mm-format-text watch="true" max-height="60">{{course.summary}}</mm-format-text>
             </summary>
+        </p>
     </div>
-
     <div ng-transclude></div>
-    </a>
 </div>
-

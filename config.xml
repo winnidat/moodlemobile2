@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
         id        = "org.edulabs.hirtenberger"
-        versionCode = "20200"
+        versionCode = "2020"
         version   = "1.0">
      <name>Hirtenberger mobileLearning</name>
 

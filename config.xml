@@ -3,8 +3,8 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
         id        = "ma.anlca.alphamobile"
-        versionCode = "20290"
-        version   = "1.9">
+        versionCode = "20291"
+        version   = "2.0">
      <name>الوكالة الوطنية لمحاربة الأمية</name>
 
     <description>

@@ -2,9 +2,9 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
-        id        = "ma.anlca.alphamobile"
-        versionCode = "20293"
-        version   = "2.2">
+        id        = "ma.anlca.alphanour"
+        versionCode = "2020"
+        version   = "1.1">
      <name>الوكالة الوطنية لمحاربة الأمية</name>
 
     <description>
@@ -16,7 +16,7 @@
     </author>
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
-        <string>3.3.0</string>
+        <string>1.1</string>
     </gap:config-file>
 
     <gap:platform name="android" />
